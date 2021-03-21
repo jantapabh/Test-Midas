@@ -1,4 +1,7 @@
-//ช้อ 4
+//ช้อ 4 จำนวนเฉพาะ
+const { performance } = require('perf_hooks');
+var t0 = performance.now()
+console.log('Start Time : ', t0);
 
 const primeAt = (n) => {
     for (let i = 2; i <= n / 2; i++) {
@@ -9,7 +12,8 @@ const primeAt = (n) => {
     return true;
 };
 
-const generatePrime = num => {
+
+const calculatePrime = num => {
     const arr = [];
     let i = 2;
     while (arr.length < num) {
@@ -18,8 +22,17 @@ const generatePrime = num => {
         };
         i = i === 2 ? i + 1 : i + 2;
     };
-    return arr;
+    console.log('primeAt (%d) : %d', num, arr[arr.length - 1]);
+    return arr[arr.length - 1];
 };
-console.log(generatePrime(6));
-console.log(generatePrime(16));
-console.log(generatePrime(100));
+
+//Call Function
+calculatePrime(1)
+calculatePrime(2)
+calculatePrime(6)
+calculatePrime(100)
+
+var t1 = performance.now()
+console.log('End Time : ', t1);
+console.log("Call to calculatePrime :  " + (t1 - t0) + " milliseconds.")
+
