@@ -1,3 +1,4 @@
+//ช้อ 4
 
 var firstvariable = "Hello";
 var secondvariable = "world";
